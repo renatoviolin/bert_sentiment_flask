@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons"
+        rel="stylesheet">
+</head>
+
+
+<body>
+    <h2> Deep Learning in Action </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-10">
+                <center>
+                    <h3> Sentiment Analysis about a review or comment</h3>
+                    <p> <b>Model</b>: bert_base_uncased - <b>Dataset</b>: imdb reviews - <b>Train accuracy</b>: 99% -
+                        <b>Test accuracy</b>: 93% </p>
+                </center>
+                <div class="overlay">
+                    <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+                </div>
+
+                <h4> Review </h4>
+                <textarea class="form-control" maxlength="256" id="txt_review"></textarea>
+
+                <h4> Results </h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text positive" id="inputGroup-sizing-default">Positive
+                                    Score</span>
+                            </div>
+                            <input type="text" class="form-control" id="positive-score" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text negative" id="inputGroup-sizing-default">Negative
+                                    Score</span>
+                            </div>
+                            <input type="text" class="form-control" id="negative-score" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Final Result</span>
+                            </div>
+                            <input type="text" class="form-control" id="final-score" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-process">Process</button>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</body>
+
+</html>
